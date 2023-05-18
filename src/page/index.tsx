@@ -1,12 +1,15 @@
-import Header from "../shared/components/layout/Header";
-import Sidebar from "../shared/components/layout/Sidebar";
+import BannerLayout from "../shared/components/layout/BannerLayout";
+import ContentLayout from "../shared/components/layout/ContentLayout";
+import SidebarLayout from "../shared/components/layout/SidebarLayout";
+import HeaderLayout from "./../shared/components/layout/HeaderLayout";
 
 export default function Page() {
-    return (
-        <div>
-            <Header />
-            <Sidebar />
-        </div>
-    )
-    
+  return (
+    <div>
+      <HeaderLayout />
+      <SidebarLayout />
+      <BannerLayout />
+      <ContentLayout title="sản phẩm hot" />
+    </div>
+  );
 }

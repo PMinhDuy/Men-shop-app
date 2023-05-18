@@ -1,0 +1,9 @@
+query GetProducts {
+    products {
+        id
+        avatarUrl
+        name
+        newPrice
+        oldPrice
+    }
+}
