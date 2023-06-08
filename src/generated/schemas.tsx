@@ -15,6 +15,16 @@ export type Scalars = {
   Float: number;
 };
 
+export type FashionNew = {
+  __typename?: 'FashionNew';
+  authorName?: Maybe<Scalars['String']>;
+  avatar?: Maybe<Scalars['String']>;
+  content?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+};
+
 export type Product = {
   __typename?: 'Product';
   avatarUrl?: Maybe<Scalars['String']>;
@@ -26,6 +36,7 @@ export type Product = {
 
 export type Query = {
   __typename?: 'Query';
+  fashionNews?: Maybe<Array<Maybe<FashionNew>>>;
   products?: Maybe<Array<Maybe<Product>>>;
   users?: Maybe<Array<Maybe<User>>>;
 };
@@ -39,6 +50,45 @@ export type User = {
 };
 
 
+export const GetFashionNewsDocument = gql`
+    query getFashionNews {
+  fashionNews {
+    avatar
+    authorName
+    content
+    createdAt
+    id
+    title
+  }
+}
+    `;
+
+/**
+ * __useGetFashionNewsQuery__
+ *
+ * To run a query within a React component, call `useGetFashionNewsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFashionNewsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFashionNewsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFashionNewsQuery(baseOptions?: Apollo.QueryHookOptions<GetFashionNewsQuery, GetFashionNewsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFashionNewsQuery, GetFashionNewsQueryVariables>(GetFashionNewsDocument, options);
+      }
+export function useGetFashionNewsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFashionNewsQuery, GetFashionNewsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFashionNewsQuery, GetFashionNewsQueryVariables>(GetFashionNewsDocument, options);
+        }
+export type GetFashionNewsQueryHookResult = ReturnType<typeof useGetFashionNewsQuery>;
+export type GetFashionNewsLazyQueryHookResult = ReturnType<typeof useGetFashionNewsLazyQuery>;
+export type GetFashionNewsQueryResult = Apollo.QueryResult<GetFashionNewsQuery, GetFashionNewsQueryVariables>;
 export const GetProductsDocument = gql`
     query GetProducts {
   products {
@@ -112,6 +162,11 @@ export function useGetUsersLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<G
 export type GetUsersQueryHookResult = ReturnType<typeof useGetUsersQuery>;
 export type GetUsersLazyQueryHookResult = ReturnType<typeof useGetUsersLazyQuery>;
 export type GetUsersQueryResult = Apollo.QueryResult<GetUsersQuery, GetUsersQueryVariables>;
+export type GetFashionNewsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFashionNewsQuery = { __typename?: 'Query', fashionNews?: Array<{ __typename?: 'FashionNew', avatar?: string | null, authorName?: string | null, content?: string | null, createdAt?: string | null, id?: string | null, title?: string | null } | null> | null };
+
 export type GetProductsQueryVariables = Exact<{ [key: string]: never; }>;
 
 

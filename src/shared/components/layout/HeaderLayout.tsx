@@ -1,14 +1,18 @@
 import { Button, Col, Divider, Image, Input, Row, Select, Space } from "antd";
 import Logo from "../../../assets/images/logo.png";
+import { useNavigate } from "react-router-dom";
 import {
   UserOutlined,
   ShoppingOutlined,
   SearchOutlined,
 } from "@ant-design/icons";
-
-const { Search } = Input;
+import { PATH_URL } from "../../ultils/constant";
 
 export default function HeaderLayout() {
+  const navigate = useNavigate();
+  const onHandleSignIn = () => {
+    navigate(PATH_URL.signIn);
+  };
   return (
     <div className="bg-[#1C5B41] w-full h-[90px]">
       <Row
@@ -47,9 +51,15 @@ export default function HeaderLayout() {
           span={6}
           className="flex items-center justify-start space-x-4 text-white text-base"
         >
-          <div className="space-x-2 cursor-pointer hover:text-[#FE9614] flex items-center">
+          <div className="space-x-2  flex items-center">
             <UserOutlined />
-            <div>Đăng nhập/Đăng ký</div>
+            <div
+              className="cursor-pointer hover:text-[#FE9614]"
+              onClick={onHandleSignIn}
+            >
+              Đăng nhập
+            </div>
+            /<div className="cursor-pointer hover:text-[#FE9614]">Đăng ký</div>
           </div>
           <Divider type="vertical" className="bg-white h-4" />
           <ShoppingOutlined width={100} height={100} />

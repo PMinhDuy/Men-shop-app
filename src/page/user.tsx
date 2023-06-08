@@ -1,17 +1,9 @@
-import { useEffect } from "react";
 import { useGetUsersQuery } from "../generated/schemas";
-import { List } from "antd";
 
 export default function Users() {
   const { data } = useGetUsersQuery();
-
-  useEffect(() => {
-    console.log("useEffect");
-  }, []);
-
   return (
-    <div
-    >
+    <div>
       {data?.users?.map((user) => (
         <div key={user?.id}>
           <p>{user?.email}</p>

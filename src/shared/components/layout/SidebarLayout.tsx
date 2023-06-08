@@ -29,8 +29,8 @@ function SidebarLayout() {
   return (
     <div className="h-16 flex px-40 items-center justify-between w-full bg-[#FFFAF0]">
       <Row gutter={24} className="space-x-6">
-        {SideBarInformation.map((items) => (
-          <Col className="text-base text-[#1C5B41] font-bold">
+        {SideBarInformation.map((items, idx) => (
+          <Col key={idx} className="text-base text-[#1C5B41] font-bold">
             {items.title}
           </Col>
         ))}

@@ -1,0 +1,10 @@
+query getFashionNews {
+    fashionNews {
+        avatar
+        authorName
+        content
+        createdAt
+        id
+        title
+    }
+} 
