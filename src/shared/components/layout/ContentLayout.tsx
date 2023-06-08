@@ -1,15 +1,21 @@
-import { Col, Row, Typography } from "antd";
+import { Button, Col, Row, Typography } from "antd";
 import { DoubleLeftOutlined, DoubleRightOutlined } from "@ant-design/icons";
-import { useState } from "react";
-import { Product, useGetProductsQuery } from "../../../generated/schemas";
-import ProductItem from "../common/ProductItem";
+import { ReactNode, useState } from "react";
 
 interface ContentLayoutInterface {
   title?: string;
-  backgroundColor?: string;
+  className?: {
+    backgroundColor?: string;
+    productNameColor?: string;
+    titleColor?: string;
+    backgroundButtonColor?: string;
+  };
+  childrenComponent?: ReactNode;
+  showButton?: boolean;
+  showSidebar?: boolean;
 }
 
-const CONTENT = [
+const CONTENT_SIDEBAR = [
   {
     id: 0,
     title: "Quần áo",
@@ -32,56 +38,64 @@ const CONTENT = [
   },
 ];
 
-function ContentLayout({ title, backgroundColor }: ContentLayoutInterface) {
+function ContentLayout({
+  title,
+  className,
+  childrenComponent,
+  showButton = true,
+  showSidebar = true,
+}: ContentLayoutInterface) {
   const [selectedId, setSelectedId] = useState(0);
-  const { data } = useGetProductsQuery();
-
-  console.log("data", data?.products);
 
   return (
-    <div className="bg-[#FFFAF0]">
-      <div
-        className={`w-full bg[${backgroundColor}] flex justify-between px-[200px] py-[50px]`}
-      >
-        <Typography.Text className="uppercase font-bold text-4xl text-[#1c5b41]">
+    <div
+      className={`flex flex-col justify-between ${className?.backgroundColor} px-[200px] py-[50px]`}
+    >
+      <div className={`w-full flex justify-between pb-[30px]`}>
+        <Typography.Text
+          className={`uppercase font-bold text-4xl ${className?.titleColor}`}
+        >
           {title}
         </Typography.Text>
-        <div className="flex items-center space-x-10">
-          <DoubleLeftOutlined
-            className="hover:text-[#1c5b41] cursor-pointer"
-            onClick={() => setSelectedId((id) => (id === 0 ? 4 : id - 1))}
-          />
-          <Row gutter={[12, 0]}>
-            {CONTENT.map((item) => (
-              <Col key={item.id}>
-                <div
-                  className={`px-[20px] text-base py-2 hover:cursor-pointer ${
-                    item.id === selectedId
-                      ? "bg-[#FE9614] text-white transition-all duration-400"
-                      : ""
-                  } rounded-xl`}
-                  onClick={() => setSelectedId(item.id)}
-                >
-                  {item.title}
-                </div>
-              </Col>
-            ))}
-          </Row>
-          <DoubleRightOutlined
-            className="hover:text-[#1c5b41] cursor-pointer"
-            onClick={() => setSelectedId((id) => (id === 4 ? 0 : id + 1))}
-          />
-        </div>
+        {showSidebar && (
+          <div className="flex items-center space-x-10">
+            <DoubleLeftOutlined
+              className="hover:text-[#1c5b41] cursor-pointer"
+              onClick={() => setSelectedId((id) => (id === 0 ? 4 : id - 1))}
+            />
+            <Row gutter={[12, 0]}>
+              {CONTENT_SIDEBAR.map((item) => (
+                <Col key={item.id}>
+                  <div
+                    className={`px-[20px] text-base py-2 hover:cursor-pointer ${
+                      item.id === selectedId
+                        ? "bg-[#FE9614] text-white transition-all duration-400"
+                        : ""
+                    } rounded-xl`}
+                    onClick={() => setSelectedId(item.id)}
+                  >
+                    {item.title}
+                  </div>
+                </Col>
+              ))}
+            </Row>
+            <DoubleRightOutlined
+              className="hover:text-[#1c5b41] cursor-pointer"
+              onClick={() => setSelectedId((id) => (id === 4 ? 0 : id + 1))}
+            />
+          </div>
+        )}
       </div>
-      <Row gutter={[24, 24]} justify={"center"}>
-        {data?.products?.map((product: Product | null) => {
-          return (
-            <Col key={product?.id}>
-              <ProductItem productItem={product} />
-            </Col>
-          );
-        })}
-      </Row>
+      {childrenComponent}
+      {showButton && (
+        <div className="flex justify-center pt-[50px]">
+          <Button
+            className={`px-[70px] py-[25px] text-lg text-white font-bold flex justify-center items-center ${className?.backgroundButtonColor}`}
+          >
+            Xem tất cả
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

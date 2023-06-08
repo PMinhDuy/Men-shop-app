@@ -4,16 +4,26 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 
 interface ProductInterface {
   productItem: Product | null;
+  sizeImage?: number;
+  className?: {
+    titleColor?: string;
+  };
 }
 
-export default function ProductItem({ productItem }: ProductInterface) {
+export default function ProductItem({
+  productItem,
+  sizeImage,
+  className = {
+    titleColor: "text-black",
+  },
+}: ProductInterface) {
   return (
     <div className="flex flex-col space-y-2">
       <div className="relative cursor-pointer">
         <Image
           src={productItem?.avatarUrl || ""}
-          width={204}
-          height={204}
+          width={sizeImage}
+          height={sizeImage}
           preview={false}
           className="rounded-xl cursor-pointer hover:opacity-70"
         />
@@ -26,14 +36,18 @@ export default function ProductItem({ productItem }: ProductInterface) {
           </div>
         </div>
       </div>
-      <Typography.Text className="text-base cursor-pointer hover:text-[#1c5b41] font-semibold">
+      <Typography.Text
+        className={`text-base cursor-pointer hover:text-[#1c5b41] font-semibold ${className.titleColor}`}
+      >
         {productItem?.name}
       </Typography.Text>
       <div className="space-x-3">
         <Typography.Text className="text-base font-semibold text-[#fe9614]">
           {productItem?.newPrice}
         </Typography.Text>
-        <Typography.Text className="line-through text-[#282828] text-sm font-light">
+        <Typography.Text
+          className={`line-through ${className.titleColor} text-sm font-light`}
+        >
           {productItem?.oldPrice}
         </Typography.Text>
       </div>
