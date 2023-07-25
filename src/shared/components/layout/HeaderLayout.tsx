@@ -14,7 +14,7 @@ export default function HeaderLayout() {
     navigate(PATH_URL.signIn);
   };
   return (
-    <div className="bg-[#1C5B41] w-full h-[90px]">
+    <div className="bg-primary-green-color w-full h-[90px]">
       <Row
         justify="center"
         className="flex justify-center h-full w-full items-center"
@@ -42,7 +42,7 @@ export default function HeaderLayout() {
               placeholder="Tìm sản phẩm bạn mong muốn"
               className="w-[400px]"
             />
-            <Button className="bg-[#FE9614] flex items-center justify-center">
+            <Button className="bg-primary-yellow-color flex items-center justify-center">
               <SearchOutlined className="text-white" />
             </Button>
           </Space.Compact>
@@ -54,12 +54,15 @@ export default function HeaderLayout() {
           <div className="space-x-2  flex items-center">
             <UserOutlined />
             <div
-              className="cursor-pointer hover:text-[#FE9614]"
+              className="cursor-pointer hover:text-primary-yellow-color"
               onClick={onHandleSignIn}
             >
               Đăng nhập
             </div>
-            /<div className="cursor-pointer hover:text-[#FE9614]">Đăng ký</div>
+            /
+            <div className="cursor-pointer hover:text-primary-yellow-color">
+              Đăng ký
+            </div>
           </div>
           <Divider type="vertical" className="bg-white h-4" />
           <ShoppingOutlined width={100} height={100} />

@@ -60,7 +60,7 @@ function ContentLayout({
         {showSidebar && (
           <div className="flex items-center space-x-10">
             <DoubleLeftOutlined
-              className="hover:text-[#1c5b41] cursor-pointer"
+              className="hover:text-primary-green-color cursor-pointer"
               onClick={() => setSelectedId((id) => (id === 0 ? 4 : id - 1))}
             />
             <Row gutter={[12, 0]}>
@@ -69,7 +69,7 @@ function ContentLayout({
                   <div
                     className={`px-[20px] text-base py-2 hover:cursor-pointer ${
                       item.id === selectedId
-                        ? "bg-[#FE9614] text-white transition-all duration-400"
+                        ? "bg-primary-yellow-color text-white transition-all duration-400"
                         : ""
                     } rounded-xl`}
                     onClick={() => setSelectedId(item.id)}
@@ -80,7 +80,7 @@ function ContentLayout({
               ))}
             </Row>
             <DoubleRightOutlined
-              className="hover:text-[#1c5b41] cursor-pointer"
+              className="hover:text-primary-green-color cursor-pointer"
               onClick={() => setSelectedId((id) => (id === 4 ? 0 : id + 1))}
             />
           </div>

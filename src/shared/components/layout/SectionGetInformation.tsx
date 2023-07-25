@@ -2,7 +2,7 @@ import { Button, Input, Space, Typography } from "antd";
 
 function SectionGetInformation() {
   return (
-    <div className="w-full bg-[#fe9614] px-[200px] py-[30px] flex justify-between items-center">
+    <div className="w-full bg-primary-yellow-color px-[200px] py-[30px] flex justify-between items-center">
       <Typography.Text className="font-bold text-lg text-white">
         NHẬP THÔNG TIN KHUYẾN MÃI TỪ CHÚNG TÔI
       </Typography.Text>

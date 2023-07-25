@@ -13,7 +13,7 @@ function FashionNewItemComponent(fashionNew: FashionNew) {
           preview={false}
         />
       </div>
-      <Typography.Text className="text-lg font-bold hover:text-[#fe9614] cursor-pointer">
+      <Typography.Text className="text-lg font-bold hover:text-primary-yellow-color cursor-pointer">
         {fashionNew.title}
       </Typography.Text>
       <div className="text-[#808080] flex items-center">

@@ -1,8 +1,6 @@
 import { ReactNode } from "react";
-import BannerLayout from "../components/layout/BannerLayout";
 import Footer from "../components/layout/Footer";
 import HeaderLayout from "../components/layout/HeaderLayout";
-import SectionBranch from "../components/layout/SectionBranch";
 import SectionGetInformation from "../components/layout/SectionGetInformation";
 import SidebarLayout from "../components/layout/SidebarLayout";
 
@@ -15,9 +13,7 @@ function MainLayout({ children }: MainLayoutProps) {
     <>
       <HeaderLayout />
       <SidebarLayout />
-      <BannerLayout />
       {children}
-      <SectionBranch />
       <SectionGetInformation />
       <Footer />
     </>

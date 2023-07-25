@@ -3,7 +3,9 @@ import GoodPriceProductListComponent from "../shared/components/ListProducts/Goo
 import HotProductListComponent from "../shared/components/ListProducts/HotProductList";
 import NewProductListComponent from "../shared/components/ListProducts/NewProductList";
 import SaleProductListComponent from "../shared/components/ListProducts/SaleProductList";
+import BannerLayout from "../shared/components/layout/BannerLayout";
 import ContentLayout from "../shared/components/layout/ContentLayout";
+import SectionBranch from "../shared/components/layout/SectionBranch";
 import MainLayout from "../shared/hocs/MainLayout";
 
 const CONTENT_LAYOUT = [
@@ -11,9 +13,9 @@ const CONTENT_LAYOUT = [
     title: "sản phẩm hot",
     childrenComponent: <HotProductListComponent />,
     className: {
-      titleColor: "text-[#1c5b41]",
+      titleColor: "text-primary-green-color",
       backgroundColor: "bg-[#FFFAF0]",
-      backgroundButtonColor: "bg-[#1c5b41]",
+      backgroundButtonColor: "bg-primary-green-color",
     },
   },
   {
@@ -21,9 +23,9 @@ const CONTENT_LAYOUT = [
     childrenComponent: <NewProductListComponent />,
     showButton: false,
     className: {
-      titleColor: "text-[#1c5b41]",
+      titleColor: "text-primary-green-color",
       backgroundColor: "bg-white",
-      backgroundButtonColor: "bg-[#1c5b41]",
+      backgroundButtonColor: "bg-primary-green-color",
     },
   },
   {
@@ -31,8 +33,8 @@ const CONTENT_LAYOUT = [
     childrenComponent: <SaleProductListComponent />,
     className: {
       titleColor: "text-white",
-      backgroundColor: "bg-[#1c5b41]",
-      backgroundButtonColor: "bg-[#FE9614]",
+      backgroundColor: "bg-primary-green-color",
+      backgroundButtonColor: "bg-primary-yellow-color",
     },
     showSidebar: false,
   },
@@ -40,9 +42,9 @@ const CONTENT_LAYOUT = [
     title: "sản phẩm giá tốt",
     childrenComponent: <GoodPriceProductListComponent />,
     className: {
-      titleColor: "text-[#1c5b41]",
+      titleColor: "text-primary-green-color",
       backgroundColor: "bg-[#FFFAF0]",
-      backgroundButtonColor: "bg-[#1c5b41]",
+      backgroundButtonColor: "bg-primary-green-color",
     },
     showButton: false,
   },
@@ -50,9 +52,9 @@ const CONTENT_LAYOUT = [
     title: "tin tức thời trang",
     childrenComponent: <FashionNewListComponent />,
     className: {
-      titleColor: "text-[#1c5b41]",
+      titleColor: "text-primary-green-color",
       backgroundColor: "bg-[#FFFAF0]",
-      backgroundButtonColor: "bg-[#1c5b41]",
+      backgroundButtonColor: "bg-primary-green-color",
     },
     showButton: false,
     showSidebar: false,
@@ -64,6 +66,7 @@ export default function Page() {
     <>
       <MainLayout>
         <>
+          <BannerLayout />
           {CONTENT_LAYOUT.map((item, index) => (
             <ContentLayout
               key={index}
@@ -78,6 +81,7 @@ export default function Page() {
               showSidebar={item.showSidebar}
             />
           ))}
+          <SectionBranch />
         </>
       </MainLayout>
     </>

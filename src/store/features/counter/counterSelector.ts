@@ -1,5 +1,5 @@
-import { CounterState } from "../rootType";
+import { RootState } from "../../rootType";
 
-const counterSelector = (state: CounterState) => state.counter.value;
+const counterSelector = (state: RootState) => state.counter.value;
 
 export default counterSelector;

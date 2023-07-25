@@ -30,16 +30,19 @@ function SidebarLayout() {
     <div className="h-16 flex px-40 items-center justify-between w-full bg-[#FFFAF0]">
       <Row gutter={24} className="space-x-6">
         {SideBarInformation.map((items, idx) => (
-          <Col key={idx} className="text-base text-[#1C5B41] font-bold">
+          <Col
+            key={idx}
+            className="text-base text-primary-green-color font-bold"
+          >
             {items.title}
           </Col>
         ))}
       </Row>
       <div className="flex items-center justify-between space-x-4">
-        <Divider type="vertical" className="bg-[#1C5B41] h-4" />
+        <Divider type="vertical" className="bg-primary-green-color h-4" />
         <div className="flex items-center space-x-2">
           <PhoneOutlined />
-          <Typography className="text-[#1C5B41] text-base font-semibold">
+          <Typography className="text-primary-green-color text-base font-semibold">
             Hotline: 1900 6750
           </Typography>
         </div>

@@ -37,7 +37,7 @@ function BannerLayout() {
           <Image src={Banner3} preview={false} />
         </div>
       </div>
-      <div className="bg-[#FE9614] py-6 flex justify-center items-center w-full">
+      <div className="bg-primary-yellow-color py-6 flex justify-center items-center w-full">
         <Row gutter={[24, 24]} justify={"center"}>
           {DataBanners.map((item, index) => (
             <Col

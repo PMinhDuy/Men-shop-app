@@ -12,13 +12,21 @@ import {
   emailSelector,
   passwordSelector,
 } from "../store/features/users/userSelector";
+import { abilitySelector } from "../store/features/testRedux/testReduxSelector";
+import { useEffect } from "react";
+import { testReduxAction } from "../store/features/testRedux/testReduxSlice";
 
 function TestRedux() {
   const count = useSelector(counterSelector);
   const userName = useSelector(userNameSelector);
   const email = useSelector(emailSelector);
   const password = useSelector(passwordSelector);
+  const ability = useSelector(abilitySelector);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(testReduxAction.loadTestReduxDataInitial());
+  }, []);
   return (
     <>
       <h1>React Redux</h1>
@@ -32,10 +40,18 @@ function TestRedux() {
         Decrement By Amount
       </Button>
 
+      <Button
+        onClick={() => dispatch(testReduxAction.loadTestReduxDataInitial())}
+      >
+        Load Test Redux
+      </Button>
+
       <h2>User Information</h2>
       <p>Username: {userName}</p>
       <p>Password: {password}</p>
       <p>Email: {email}</p>
+      <br />
+      <p>ability Redux: {ability}</p>
     </>
   );
 }

@@ -1,7 +1,7 @@
-import { UserState } from "../rootType";
+import { RootState } from "../../rootType";
 
-const userNameSelector = (state: UserState) => state.user.userName;
-const emailSelector = (state: UserState) => state.user.email;
-const passwordSelector = (state: UserState) => state.user.password;
+const userNameSelector = (state: RootState) => state.user.userName;
+const emailSelector = (state: RootState) => state.user.email;
+const passwordSelector = (state: RootState) => state.user.password;
 
 export { userNameSelector, emailSelector, passwordSelector };
