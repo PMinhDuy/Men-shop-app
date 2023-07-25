@@ -1,4 +1,4 @@
-import { Button, Input, Space, Typography } from "antd";
+import { Button, Input, Typography } from "antd";
 
 function SectionGetInformation() {
   return (
