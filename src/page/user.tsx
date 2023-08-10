@@ -6,7 +6,7 @@ export default function Users() {
     <div>
       {data?.users?.map((user) => (
         <div key={user?.id}>
-          <p>{user?.email}</p>
+          <p>{user?.username}</p>
           <p>{user?.id}</p>
         </div>
       ))}

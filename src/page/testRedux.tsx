@@ -15,6 +15,7 @@ import {
 import { abilitySelector } from "../store/features/testRedux/testReduxSelector";
 import { useEffect } from "react";
 import { testReduxAction } from "../store/features/testRedux/testReduxSlice";
+import axios from "axios";
 
 function TestRedux() {
   const count = useSelector(counterSelector);
