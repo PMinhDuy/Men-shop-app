@@ -1,6 +1,0 @@
-mutation Login($userInfo: UserInformation) {
-  login(userInfo: $userInfo) {
-    message
-    status
-  }
-}
