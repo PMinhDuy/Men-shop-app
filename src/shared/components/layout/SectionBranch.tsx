@@ -11,42 +11,27 @@ function SectionBranch() {
       >
         <Col>
           <a href="#">
-            <Image
-              src="//bizweb.dktcdn.net/100/455/315/themes/894917/assets/img_brand_1.jpg?1676282094225"
-              preview={false}
-            />
+            <Image src="//bizweb.dktcdn.net/100/455/315/themes/894917/assets/img_brand_1.jpg?1676282094225" />
           </a>
         </Col>
         <Col>
           <a href="#">
-            <Image
-              src="//bizweb.dktcdn.net/100/455/315/themes/894917/assets/img_brand_2.jpg?1676282094225"
-              preview={false}
-            />
+            <Image src="//bizweb.dktcdn.net/100/455/315/themes/894917/assets/img_brand_2.jpg?1676282094225" />
           </a>
         </Col>
         <Col>
           <a href="#">
-            <Image
-              src="//bizweb.dktcdn.net/100/455/315/themes/894917/assets/img_brand_3.jpg?1676282094225"
-              preview={false}
-            />
+            <Image src="//bizweb.dktcdn.net/100/455/315/themes/894917/assets/img_brand_3.jpg?1676282094225" />
           </a>
         </Col>
         <Col>
           <a href="#">
-            <Image
-              src="//bizweb.dktcdn.net/100/455/315/themes/894917/assets/img_brand_4.jpg?1676282094225"
-              preview={false}
-            />
+            <Image src="//bizweb.dktcdn.net/100/455/315/themes/894917/assets/img_brand_4.jpg?1676282094225" />
           </a>
         </Col>
         <Col>
           <a href="#">
-            <Image
-              src="//bizweb.dktcdn.net/100/455/315/themes/894917/assets/img_brand_5.jpg?1676282094225"
-              preview={false}
-            />
+            <Image src="//bizweb.dktcdn.net/100/455/315/themes/894917/assets/img_brand_5.jpg?1676282094225" />
           </a>
         </Col>
       </Row>
