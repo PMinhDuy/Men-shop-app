@@ -2,8 +2,22 @@ import { Button, Form, Input, Typography, notification } from "antd";
 import { useLoginMutation } from "../../../generated/schemas";
 import { useNavigate } from "react-router-dom";
 import { PATH_URL } from "../../ultils/constant";
+import FieldInput from "./FieldInput";
 
 const { Text } = Typography;
+
+const FieldList = [
+  {
+    messageError: "Please input your username",
+    name: "username",
+    placeHolder: "What is your username",
+  },
+  {
+    messageError: "Please input your password",
+    name: "password",
+    placeHolder: "What is your password",
+  },
+];
 
 interface LoginFormProps {
   username: string;
@@ -40,30 +54,14 @@ function AuthenticationForm() {
           Nếu bạn chưa có tài khoản, đăng ký tại đây
         </Text>
         <Form onFinish={onLogin}>
-          <Form.Item
-            className="text-center"
-            name="username"
-            validateStatus="error"
-            rules={[{ required: true, message: "Please input your username" }]}
-          >
-            <Input
-              bordered={false}
-              className="px-3 py-2 bg-gray-100"
-              placeholder="Email"
+          {FieldList.map((field) => (
+            <FieldInput
+              key={field.name}
+              messageError={field.messageError}
+              name={field.name}
+              placeHolder={field.placeHolder}
             />
-          </Form.Item>
-          <Form.Item
-            className="text-center"
-            name="password"
-            validateStatus="error"
-            rules={[{ required: true, message: "Please input your password" }]}
-          >
-            <Input
-              bordered={false}
-              className="px-3 py-2 bg-gray-100"
-              placeholder="Mật khẩu"
-            />
-          </Form.Item>
+          ))}
           <div className="flex flex-col items-center space-y-2 text-center">
             <Button
               className="w-full bg-primary-green-color text-white"

@@ -5,11 +5,13 @@ import { useRoutes } from "react-router-dom";
 import TestRedux from "./page/testRedux";
 import { PATH_URL } from "./shared/ultils/constant";
 import SignIn from "./page/signIn";
+import Register from "./page/register";
 
 function App() {
   const routes = [
     { path: "/", element: <Page /> },
     { path: PATH_URL.user, element: <Users /> },
+    { path: PATH_URL.register, element: <Register /> },
     { path: PATH_URL.signIn, element: <SignIn /> },
     { path: "/testRedux", element: <TestRedux /> },
   ];
