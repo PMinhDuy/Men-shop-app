@@ -1,22 +1,19 @@
-import type { PayloadAction } from "@reduxjs/toolkit";
-import { createSlice } from "@reduxjs/toolkit";
-import type { TestReduxState } from "../../rootType";
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import type { TestReduxState } from '../../rootType';
 
 export const testReduxSlice = createSlice({
   initialState: {
-    ability: "ability initialState",
-    berry: "berry initialState",
+    ability: 'ability initialState',
+    berry: 'berry initialState',
   },
-  name: "testRedux",
+  name: 'testRedux',
   reducers: {
     loadTestReduxDataInitial: (state) => {
-      state.ability = "ability initialState";
-      state.berry = "berry initialState";
+      state.ability = 'ability initialState';
+      state.berry = 'berry initialState';
     },
-    loadTestReduxDataSucceeded: (
-      state,
-      action: PayloadAction<TestReduxState>,
-    ) => {
+    loadTestReduxDataSucceeded: (state, action: PayloadAction<TestReduxState>) => {
       state.ability = action.payload.testRedux.ability;
       state.berry = action.payload.testRedux.berry;
     },

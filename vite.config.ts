@@ -1,15 +1,15 @@
-import { defineConfig, loadEnv } from "vite";
-import { visualizer } from "rollup-plugin-visualizer";
-import react from "@vitejs/plugin-react-swc";
-import svgr from "vite-plugin-svgr";
-import pages from "vite-plugin-pages";
-import path from "path";
+import { defineConfig, loadEnv } from 'vite';
+import { visualizer } from 'rollup-plugin-visualizer';
+import react from '@vitejs/plugin-react-swc';
+import svgr from 'vite-plugin-svgr';
+import pages from 'vite-plugin-pages';
+import path from 'path';
 
 function htmlPlugin(env: Record<string, string | undefined>) {
   return {
-    name: "html-transform",
+    name: 'html-transform',
     transformIndexHtml: {
-      enforce: "pre",
+      enforce: 'pre',
       transform: (html: string) => {
         return html.replace(/<%=(.*?)%>/g, (match, p1) => env[p1] ?? match);
       },
@@ -28,23 +28,23 @@ export default ({ mode }: { mode: string }) => {
       svgr(),
       react(),
       pages({
-        routeStyle: "next",
-        dirs: "src/pages",
-        importMode: "async",
+        routeStyle: 'next',
+        dirs: 'src/pages',
+        importMode: 'async',
       }),
     ],
     resolve: {
       alias: [
         {
           find: /^#/,
-          replacement: path.resolve(__dirname, "src"),
+          replacement: path.resolve(__dirname, 'src'),
         },
-        { find: /^~antd/, replacement: "antd" },
+        { find: /^~antd/, replacement: 'antd' },
       ],
     },
     build: {
       sourcemap: true,
-      outDir: "build",
+      outDir: 'build',
       rollupOptions: {
         plugins: [visualizer()],
       },

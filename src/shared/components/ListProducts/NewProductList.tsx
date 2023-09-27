@@ -1,11 +1,9 @@
-import { Col, Row, Image } from "antd";
-import { Product, useGetProductsQuery } from "../../../generated/schemas";
-import ProductItem from "../common/ProductItem";
+import { Col, Row, Image } from 'antd';
+import { type Product, useGetProductsQuery } from '../../../generated/schemas';
+import ProductItem from '../common/ProductItem';
 
 export default function NewProductListComponent() {
   const { data } = useGetProductsQuery();
-
-  console.log(data);
 
   return (
     <Row gutter={[24, 24]}>

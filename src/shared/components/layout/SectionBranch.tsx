@@ -1,14 +1,9 @@
-import { Col, Row, Image } from "antd";
+import { Col, Row, Image } from 'antd';
 
 function SectionBranch() {
   return (
     <div className="bg-[#ffff] flex justify-center items-center">
-      <Row
-        gutter={[24, 0]}
-        justify={"center"}
-        align={"middle"}
-        className="gap-x-8"
-      >
+      <Row gutter={[24, 0]} justify={'center'} align={'middle'} className="gap-x-8">
         <Col>
           <a href="#">
             <Image

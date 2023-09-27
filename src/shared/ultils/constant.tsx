@@ -1,8 +1,8 @@
 export const PATH_URL = {
-  dashBoard: "/",
-  user: "/users",
-  signIn: "/signIn",
-  signUp: "/signUp",
+  dashBoard: '/',
+  user: '/users',
+  signIn: '/signIn',
+  signUp: '/signUp',
 };
 
-export const CHAT_HASH = "#message";
+export const CHAT_HASH = '#message';

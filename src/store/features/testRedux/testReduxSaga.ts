@@ -1,15 +1,15 @@
-import { put, takeLatest } from "redux-saga/effects";
-import { testReduxAction } from "./testReduxSlice";
+import { put, takeLatest } from 'redux-saga/effects';
+import { testReduxAction } from './testReduxSlice';
 
 export function* testSaga() {
   try {
     yield put(
       testReduxAction.loadTestReduxDataSucceeded({
         testRedux: {
-          ability: "testability",
-          berry: "testberry",
+          ability: 'testability',
+          berry: 'testberry',
         },
-      }),
+      })
     );
   } catch (error) {
     // console.log(error);

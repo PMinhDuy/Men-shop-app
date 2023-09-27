@@ -1,6 +1,6 @@
-import { Button, Col, Row, Typography } from "antd";
-import { DoubleLeftOutlined, DoubleRightOutlined } from "@ant-design/icons";
-import { ReactNode, useState } from "react";
+import { Button, Col, Row, Typography } from 'antd';
+import { DoubleLeftOutlined, DoubleRightOutlined } from '@ant-design/icons';
+import { ReactNode, useState } from 'react';
 
 interface ContentLayoutInterface {
   title?: string;
@@ -18,23 +18,23 @@ interface ContentLayoutInterface {
 const CONTENT_SIDEBAR = [
   {
     id: 0,
-    title: "Quần áo",
+    title: 'Quần áo',
   },
   {
     id: 1,
-    title: "Phụ kiện",
+    title: 'Phụ kiện',
   },
   {
     id: 2,
-    title: "Giày dép",
+    title: 'Giày dép',
   },
   {
     id: 3,
-    title: "Bé gái",
+    title: 'Bé gái',
   },
   {
     id: 4,
-    title: "Bé trai",
+    title: 'Bé trai',
   },
 ];
 
@@ -48,15 +48,9 @@ function ContentLayout({
   const [selectedId, setSelectedId] = useState(0);
 
   return (
-    <div
-      className={`flex flex-col justify-between ${className?.backgroundColor} px-[200px] py-[50px]`}
-    >
+    <div className={`flex flex-col justify-between ${className?.backgroundColor} px-[200px] py-[50px]`}>
       <div className={`w-full flex justify-between pb-[30px]`}>
-        <Typography.Text
-          className={`uppercase font-bold text-4xl ${className?.titleColor}`}
-        >
-          {title}
-        </Typography.Text>
+        <Typography.Text className={`uppercase font-bold text-4xl ${className?.titleColor}`}>{title}</Typography.Text>
         {showSidebar && (
           <div className="flex items-center space-x-10">
             <DoubleLeftOutlined
@@ -68,9 +62,7 @@ function ContentLayout({
                 <Col key={item.id}>
                   <div
                     className={`px-[20px] text-base py-2 hover:cursor-pointer ${
-                      item.id === selectedId
-                        ? "bg-primary-yellow-color text-white transition-all duration-400"
-                        : ""
+                      item.id === selectedId ? 'bg-primary-yellow-color text-white transition-all duration-400' : ''
                     } rounded-xl`}
                     onClick={() => setSelectedId(item.id)}
                   >

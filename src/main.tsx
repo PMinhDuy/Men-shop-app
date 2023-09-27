@@ -1,15 +1,13 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import { BrowserRouter } from "react-router-dom";
-import { StyleProvider } from "@ant-design/cssinjs";
-import { Provider } from "react-redux";
-import { store } from "./store/store";
-import { I18nextProvider, useTranslation } from "react-i18next";
-import i18n from "./shared/i18n";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { BrowserRouter } from 'react-router-dom';
+import { StyleProvider } from '@ant-design/cssinjs';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+import { I18nextProvider, useTranslation } from 'react-i18next';
 
 const Main = () => {
   const { i18n } = useTranslation();
@@ -30,13 +28,13 @@ const Main = () => {
 };
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql",
+  uri: 'http://localhost:4000/graphql',
   cache: new InMemoryCache(),
 });
 
-const root = createRoot(document.getElementById("root") as HTMLElement);
+const root = createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <Main />
-  </React.StrictMode>,
+  </React.StrictMode>
 );

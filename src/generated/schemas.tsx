@@ -1,5 +1,5 @@
-import { gql } from "@apollo/client";
-import * as Apollo from "@apollo/client";
+import { gql } from '@apollo/client';
+import * as Apollo from '@apollo/client';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = {
@@ -22,17 +22,17 @@ export type Scalars = {
 };
 
 export type FashionNew = {
-  __typename?: "FashionNew";
-  authorName?: Maybe<Scalars["String"]>;
-  avatar?: Maybe<Scalars["String"]>;
-  content?: Maybe<Scalars["String"]>;
-  createdAt?: Maybe<Scalars["String"]>;
-  id?: Maybe<Scalars["ID"]>;
-  title?: Maybe<Scalars["String"]>;
+  __typename?: 'FashionNew';
+  authorName?: Maybe<Scalars['String']>;
+  avatar?: Maybe<Scalars['String']>;
+  content?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
 };
 
 export type Mutation = {
-  __typename?: "Mutation";
+  __typename?: 'Mutation';
   login?: Maybe<Response>;
 };
 
@@ -41,37 +41,37 @@ export type MutationLoginArgs = {
 };
 
 export type Product = {
-  __typename?: "Product";
-  avatarUrl?: Maybe<Scalars["String"]>;
-  id?: Maybe<Scalars["ID"]>;
-  name?: Maybe<Scalars["String"]>;
-  newPrice?: Maybe<Scalars["String"]>;
-  oldPrice?: Maybe<Scalars["String"]>;
+  __typename?: 'Product';
+  avatarUrl?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
+  name?: Maybe<Scalars['String']>;
+  newPrice?: Maybe<Scalars['String']>;
+  oldPrice?: Maybe<Scalars['String']>;
 };
 
 export type Query = {
-  __typename?: "Query";
+  __typename?: 'Query';
   fashionNews?: Maybe<Array<Maybe<FashionNew>>>;
   products?: Maybe<Array<Maybe<Product>>>;
   users?: Maybe<Array<Maybe<User>>>;
 };
 
 export type Response = {
-  __typename?: "Response";
-  message?: Maybe<Scalars["String"]>;
-  status?: Maybe<Scalars["String"]>;
+  __typename?: 'Response';
+  message?: Maybe<Scalars['String']>;
+  status?: Maybe<Scalars['String']>;
 };
 
 export type User = {
-  __typename?: "User";
-  id?: Maybe<Scalars["ID"]>;
-  password?: Maybe<Scalars["String"]>;
-  username?: Maybe<Scalars["String"]>;
+  __typename?: 'User';
+  id?: Maybe<Scalars['ID']>;
+  password?: Maybe<Scalars['String']>;
+  username?: Maybe<Scalars['String']>;
 };
 
 export type UserInformation = {
-  password?: InputMaybe<Scalars["String"]>;
-  username?: InputMaybe<Scalars["String"]>;
+  password?: InputMaybe<Scalars['String']>;
+  username?: InputMaybe<Scalars['String']>;
 };
 
 export const LoginDocument = gql`
@@ -82,10 +82,7 @@ export const LoginDocument = gql`
     }
   }
 `;
-export type LoginMutationFn = Apollo.MutationFunction<
-  LoginMutation,
-  LoginMutationVariables
->;
+export type LoginMutationFn = Apollo.MutationFunction<LoginMutation, LoginMutationVariables>;
 
 /**
  * __useLoginMutation__
@@ -104,24 +101,13 @@ export type LoginMutationFn = Apollo.MutationFunction<
  *   },
  * });
  */
-export function useLoginMutation(
-  baseOptions?: Apollo.MutationHookOptions<
-    LoginMutation,
-    LoginMutationVariables
-  >,
-) {
+export function useLoginMutation(baseOptions?: Apollo.MutationHookOptions<LoginMutation, LoginMutationVariables>) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useMutation<LoginMutation, LoginMutationVariables>(
-    LoginDocument,
-    options,
-  );
+  return Apollo.useMutation<LoginMutation, LoginMutationVariables>(LoginDocument, options);
 }
 export type LoginMutationHookResult = ReturnType<typeof useLoginMutation>;
 export type LoginMutationResult = Apollo.MutationResult<LoginMutation>;
-export type LoginMutationOptions = Apollo.BaseMutationOptions<
-  LoginMutation,
-  LoginMutationVariables
->;
+export type LoginMutationOptions = Apollo.BaseMutationOptions<LoginMutation, LoginMutationVariables>;
 export const GetFashionNewsDocument = gql`
   query getFashionNews {
     fashionNews {
@@ -151,39 +137,20 @@ export const GetFashionNewsDocument = gql`
  * });
  */
 export function useGetFashionNewsQuery(
-  baseOptions?: Apollo.QueryHookOptions<
-    GetFashionNewsQuery,
-    GetFashionNewsQueryVariables
-  >,
+  baseOptions?: Apollo.QueryHookOptions<GetFashionNewsQuery, GetFashionNewsQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetFashionNewsQuery, GetFashionNewsQueryVariables>(
-    GetFashionNewsDocument,
-    options,
-  );
+  return Apollo.useQuery<GetFashionNewsQuery, GetFashionNewsQueryVariables>(GetFashionNewsDocument, options);
 }
 export function useGetFashionNewsLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetFashionNewsQuery,
-    GetFashionNewsQueryVariables
-  >,
+  baseOptions?: Apollo.LazyQueryHookOptions<GetFashionNewsQuery, GetFashionNewsQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<GetFashionNewsQuery, GetFashionNewsQueryVariables>(
-    GetFashionNewsDocument,
-    options,
-  );
+  return Apollo.useLazyQuery<GetFashionNewsQuery, GetFashionNewsQueryVariables>(GetFashionNewsDocument, options);
 }
-export type GetFashionNewsQueryHookResult = ReturnType<
-  typeof useGetFashionNewsQuery
->;
-export type GetFashionNewsLazyQueryHookResult = ReturnType<
-  typeof useGetFashionNewsLazyQuery
->;
-export type GetFashionNewsQueryResult = Apollo.QueryResult<
-  GetFashionNewsQuery,
-  GetFashionNewsQueryVariables
->;
+export type GetFashionNewsQueryHookResult = ReturnType<typeof useGetFashionNewsQuery>;
+export type GetFashionNewsLazyQueryHookResult = ReturnType<typeof useGetFashionNewsLazyQuery>;
+export type GetFashionNewsQueryResult = Apollo.QueryResult<GetFashionNewsQuery, GetFashionNewsQueryVariables>;
 export const GetProductsDocument = gql`
   query GetProducts {
     products {
@@ -212,37 +179,20 @@ export const GetProductsDocument = gql`
  * });
  */
 export function useGetProductsQuery(
-  baseOptions?: Apollo.QueryHookOptions<
-    GetProductsQuery,
-    GetProductsQueryVariables
-  >,
+  baseOptions?: Apollo.QueryHookOptions<GetProductsQuery, GetProductsQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetProductsQuery, GetProductsQueryVariables>(
-    GetProductsDocument,
-    options,
-  );
+  return Apollo.useQuery<GetProductsQuery, GetProductsQueryVariables>(GetProductsDocument, options);
 }
 export function useGetProductsLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetProductsQuery,
-    GetProductsQueryVariables
-  >,
+  baseOptions?: Apollo.LazyQueryHookOptions<GetProductsQuery, GetProductsQueryVariables>
 ) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<GetProductsQuery, GetProductsQueryVariables>(
-    GetProductsDocument,
-    options,
-  );
+  return Apollo.useLazyQuery<GetProductsQuery, GetProductsQueryVariables>(GetProductsDocument, options);
 }
 export type GetProductsQueryHookResult = ReturnType<typeof useGetProductsQuery>;
-export type GetProductsLazyQueryHookResult = ReturnType<
-  typeof useGetProductsLazyQuery
->;
-export type GetProductsQueryResult = Apollo.QueryResult<
-  GetProductsQuery,
-  GetProductsQueryVariables
->;
+export type GetProductsLazyQueryHookResult = ReturnType<typeof useGetProductsLazyQuery>;
+export type GetProductsQueryResult = Apollo.QueryResult<GetProductsQuery, GetProductsQueryVariables>;
 export const GetUsersDocument = gql`
   query GetUsers {
     users {
@@ -267,43 +217,25 @@ export const GetUsersDocument = gql`
  *   },
  * });
  */
-export function useGetUsersQuery(
-  baseOptions?: Apollo.QueryHookOptions<GetUsersQuery, GetUsersQueryVariables>,
-) {
+export function useGetUsersQuery(baseOptions?: Apollo.QueryHookOptions<GetUsersQuery, GetUsersQueryVariables>) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<GetUsersQuery, GetUsersQueryVariables>(
-    GetUsersDocument,
-    options,
-  );
+  return Apollo.useQuery<GetUsersQuery, GetUsersQueryVariables>(GetUsersDocument, options);
 }
-export function useGetUsersLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetUsersQuery,
-    GetUsersQueryVariables
-  >,
-) {
+export function useGetUsersLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetUsersQuery, GetUsersQueryVariables>) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<GetUsersQuery, GetUsersQueryVariables>(
-    GetUsersDocument,
-    options,
-  );
+  return Apollo.useLazyQuery<GetUsersQuery, GetUsersQueryVariables>(GetUsersDocument, options);
 }
 export type GetUsersQueryHookResult = ReturnType<typeof useGetUsersQuery>;
-export type GetUsersLazyQueryHookResult = ReturnType<
-  typeof useGetUsersLazyQuery
->;
-export type GetUsersQueryResult = Apollo.QueryResult<
-  GetUsersQuery,
-  GetUsersQueryVariables
->;
+export type GetUsersLazyQueryHookResult = ReturnType<typeof useGetUsersLazyQuery>;
+export type GetUsersQueryResult = Apollo.QueryResult<GetUsersQuery, GetUsersQueryVariables>;
 export type LoginMutationVariables = Exact<{
   userInfo?: InputMaybe<UserInformation>;
 }>;
 
 export type LoginMutation = {
-  __typename?: "Mutation";
+  __typename?: 'Mutation';
   login?: {
-    __typename?: "Response";
+    __typename?: 'Response';
     message?: string | null;
     status?: string | null;
   } | null;
@@ -312,9 +244,9 @@ export type LoginMutation = {
 export type GetFashionNewsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetFashionNewsQuery = {
-  __typename?: "Query";
+  __typename?: 'Query';
   fashionNews?: Array<{
-    __typename?: "FashionNew";
+    __typename?: 'FashionNew';
     avatar?: string | null;
     authorName?: string | null;
     content?: string | null;
@@ -327,9 +259,9 @@ export type GetFashionNewsQuery = {
 export type GetProductsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetProductsQuery = {
-  __typename?: "Query";
+  __typename?: 'Query';
   products?: Array<{
-    __typename?: "Product";
+    __typename?: 'Product';
     id?: string | null;
     avatarUrl?: string | null;
     name?: string | null;
@@ -341,9 +273,9 @@ export type GetProductsQuery = {
 export type GetUsersQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetUsersQuery = {
-  __typename?: "Query";
+  __typename?: 'Query';
   users?: Array<{
-    __typename?: "User";
+    __typename?: 'User';
     id?: string | null;
     username?: string | null;
   } | null> | null;

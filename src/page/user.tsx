@@ -1,4 +1,4 @@
-import { useGetUsersQuery } from "../generated/schemas";
+import { useGetUsersQuery } from '../generated/schemas';
 
 export default function Users() {
   const { data } = useGetUsersQuery();
@@ -10,9 +10,7 @@ export default function Users() {
           <p>{user?.id}</p>
         </div>
       ))}
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Button
-      </button>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Button</button>
     </div>
   );
 }

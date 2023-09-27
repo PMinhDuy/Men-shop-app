@@ -1,4 +1,4 @@
-import { RootState } from "../../rootType";
+import { RootState } from '../../rootType';
 
 const userNameSelector = (state: RootState) => state.user.userName;
 const emailSelector = (state: RootState) => state.user.email;

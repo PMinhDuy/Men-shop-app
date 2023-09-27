@@ -1,60 +1,60 @@
-import FashionNewListComponent from "../shared/components/ListProducts/FashionNewList";
-import GoodPriceProductListComponent from "../shared/components/ListProducts/GoodPriceProductList";
-import HotProductListComponent from "../shared/components/ListProducts/HotProductList";
-import NewProductListComponent from "../shared/components/ListProducts/NewProductList";
-import SaleProductListComponent from "../shared/components/ListProducts/SaleProductList";
-import BannerLayout from "../shared/components/layout/BannerLayout";
-import ContentLayout from "../shared/components/layout/ContentLayout";
-import SectionBranch from "../shared/components/layout/SectionBranch";
-import MainLayout from "../shared/hocs/MainLayout";
+import FashionNewListComponent from '../shared/components/ListProducts/FashionNewList';
+import GoodPriceProductListComponent from '../shared/components/ListProducts/GoodPriceProductList';
+import HotProductListComponent from '../shared/components/ListProducts/HotProductList';
+import NewProductListComponent from '../shared/components/ListProducts/NewProductList';
+import SaleProductListComponent from '../shared/components/ListProducts/SaleProductList';
+import BannerLayout from '../shared/components/layout/BannerLayout';
+import ContentLayout from '../shared/components/layout/ContentLayout';
+import SectionBranch from '../shared/components/layout/SectionBranch';
+import MainLayout from '../shared/hocs/MainLayout';
 
 const CONTENT_LAYOUT = [
   {
-    title: "sản phẩm hot",
+    title: 'sản phẩm hot',
     childrenComponent: <HotProductListComponent />,
     className: {
-      titleColor: "text-primary-green-color",
-      backgroundColor: "bg-[#FFFAF0]",
-      backgroundButtonColor: "bg-primary-green-color",
+      titleColor: 'text-primary-green-color',
+      backgroundColor: 'bg-[#FFFAF0]',
+      backgroundButtonColor: 'bg-primary-green-color',
     },
   },
   {
-    title: "hàng mới về",
+    title: 'hàng mới về',
     childrenComponent: <NewProductListComponent />,
     showButton: false,
     className: {
-      titleColor: "text-primary-green-color",
-      backgroundColor: "bg-white",
-      backgroundButtonColor: "bg-primary-green-color",
+      titleColor: 'text-primary-green-color',
+      backgroundColor: 'bg-white',
+      backgroundButtonColor: 'bg-primary-green-color',
     },
   },
   {
-    title: "sale đồng giá - đừng lo về giá",
+    title: 'sale đồng giá - đừng lo về giá',
     childrenComponent: <SaleProductListComponent />,
     className: {
-      titleColor: "text-white",
-      backgroundColor: "bg-primary-green-color",
-      backgroundButtonColor: "bg-primary-yellow-color",
+      titleColor: 'text-white',
+      backgroundColor: 'bg-primary-green-color',
+      backgroundButtonColor: 'bg-primary-yellow-color',
     },
     showSidebar: false,
   },
   {
-    title: "sản phẩm giá tốt",
+    title: 'sản phẩm giá tốt',
     childrenComponent: <GoodPriceProductListComponent />,
     className: {
-      titleColor: "text-primary-green-color",
-      backgroundColor: "bg-[#FFFAF0]",
-      backgroundButtonColor: "bg-primary-green-color",
+      titleColor: 'text-primary-green-color',
+      backgroundColor: 'bg-[#FFFAF0]',
+      backgroundButtonColor: 'bg-primary-green-color',
     },
     showButton: false,
   },
   {
-    title: "tin tức thời trang",
+    title: 'tin tức thời trang',
     childrenComponent: <FashionNewListComponent />,
     className: {
-      titleColor: "text-primary-green-color",
-      backgroundColor: "bg-[#FFFAF0]",
-      backgroundButtonColor: "bg-primary-green-color",
+      titleColor: 'text-primary-green-color',
+      backgroundColor: 'bg-[#FFFAF0]',
+      backgroundButtonColor: 'bg-primary-green-color',
     },
     showButton: false,
     showSidebar: false,

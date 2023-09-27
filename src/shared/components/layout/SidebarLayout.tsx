@@ -1,27 +1,27 @@
-import { Col, Divider, Row, Typography } from "antd";
-import { PhoneOutlined } from "@ant-design/icons";
+import { Col, Divider, Row, Typography } from 'antd';
+import { PhoneOutlined } from '@ant-design/icons';
 
 const SideBarInformation = [
   {
-    title: "Trang chủ",
+    title: 'Trang chủ',
   },
   {
-    title: "Thời trang Nam",
+    title: 'Thời trang Nam',
   },
   {
-    title: "Sản phẩm",
+    title: 'Sản phẩm',
   },
   {
-    title: "Bé trai",
+    title: 'Bé trai',
   },
   {
-    title: "Bé gái",
+    title: 'Bé gái',
   },
   {
-    title: "Tin tức",
+    title: 'Tin tức',
   },
   {
-    title: "Liên hệ",
+    title: 'Liên hệ',
   },
 ];
 
@@ -30,10 +30,7 @@ function SidebarLayout() {
     <div className="h-16 flex px-40 items-center justify-between w-full bg-[#FFFAF0]">
       <Row gutter={24} className="space-x-6">
         {SideBarInformation.map((items, idx) => (
-          <Col
-            key={idx}
-            className="text-base text-primary-green-color font-bold"
-          >
+          <Col key={idx} className="text-base text-primary-green-color font-bold">
             {items.title}
           </Col>
         ))}
@@ -42,9 +39,7 @@ function SidebarLayout() {
         <Divider type="vertical" className="bg-primary-green-color h-4" />
         <div className="flex items-center space-x-2">
           <PhoneOutlined />
-          <Typography className="text-primary-green-color text-base font-semibold">
-            Hotline: 1900 6750
-          </Typography>
+          <Typography className="text-primary-green-color text-base font-semibold">Hotline: 1900 6750</Typography>
         </div>
       </div>
     </div>

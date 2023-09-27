@@ -1,12 +1,12 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { UserState } from "../../rootType";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { UserState } from '../../rootType';
 
 export const userSlice = createSlice({
-  name: "user",
+  name: 'user',
   initialState: {
-    email: "phamminhduy191199@gmail.com",
-    userName: "Duy Pham",
-    password: "Duy123",
+    email: 'phamminhduy191199@gmail.com',
+    userName: 'Duy Pham',
+    password: 'Duy123',
   },
   reducers: {
     createUser: (state, action: PayloadAction<UserState>) => {
