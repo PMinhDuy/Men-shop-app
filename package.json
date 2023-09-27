@@ -40,7 +40,8 @@
     "lint-staged": "lint-staged",
     "lint": "eslint \"src/**/*.{tsx,ts}\" --fix",
     "lint-pass": "echo '\\033[4;32m♡ ' Format complete ♡' \\033[0m'",
-    "generated": "graphql-codegen --config codegen.yml"
+    "generated": "graphql-codegen --config codegen.yml",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@enouvo/eslint-config-react": "^2.2.0",
@@ -78,5 +79,8 @@
     "scripts/*",
     "country-schemas.tsx",
     "src/vite-env.d.ts"
-  ]
+  ],
+  "lint-staged": {
+    "*.{ts,tsx,js}": "eslint --fix" 
+  }
 }
