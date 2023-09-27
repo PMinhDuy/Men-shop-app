@@ -1,7 +1,8 @@
 module.exports = {
-  content: ["./src/**/*.{html,ts,tsx}"],
+  content: ["./src/**/*.{ts,tsx}"],
   important: true,
   theme: {
+    container: { center: true },
     extend: {
       colors: {
         "primary-green-color": "#1c5b41",

@@ -9,7 +9,7 @@ export function* testSaga() {
           ability: "testability",
           berry: "testberry",
         },
-      })
+      }),
     );
   } catch (error) {
     // console.log(error);

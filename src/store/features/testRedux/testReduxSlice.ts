@@ -1,12 +1,13 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { TestReduxState } from "../../rootType";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import type { TestReduxState } from "../../rootType";
 
 export const testReduxSlice = createSlice({
-  name: "testRedux",
   initialState: {
     ability: "ability initialState",
     berry: "berry initialState",
   },
+  name: "testRedux",
   reducers: {
     loadTestReduxDataInitial: (state) => {
       state.ability = "ability initialState";
@@ -14,7 +15,7 @@ export const testReduxSlice = createSlice({
     },
     loadTestReduxDataSucceeded: (
       state,
-      action: PayloadAction<TestReduxState>
+      action: PayloadAction<TestReduxState>,
     ) => {
       state.ability = action.payload.testRedux.ability;
       state.berry = action.payload.testRedux.berry;

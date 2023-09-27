@@ -4,6 +4,7 @@ import { useGetFashionNewsQuery } from "../../../../generated/schemas";
 
 function FashionNewListComponent() {
   const { data } = useGetFashionNewsQuery();
+
   return (
     <Row justify={"space-between"}>
       {data?.fashionNews?.map((item, index) => (

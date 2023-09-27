@@ -4,3 +4,5 @@ export const PATH_URL = {
   signIn: "/signIn",
   signUp: "/signUp",
 };
+
+export const CHAT_HASH = "#message";

@@ -1,83 +1,28 @@
-
 {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "jest": true
-  },
+  "extends": ["@enouvo/eslint-config-react"],
   "rules": {
-    "no-console": "error",
-    "import/first": "error",
-    "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off"
+    "@typescript-eslint/naming-convention": "warn"
   },
-  "extends": [
-    "react-app",
-    "react-app/jest",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended",
-    "prettier"
+  "ignorePatterns": [
+    "src/vite-env.d.ts,vite.config.ts,vitest.setup.ts,scripts/"
   ],
-  "parser": "@typescript-eslint/parser",
-  "root": true,
-  "plugins": ["react", "@typescript-eslint"],
-  "parserOptions": {
-    "ecmaVersion": 11,
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "project": "./tsconfig.json"
-  },
-  "settings": {
-    "react": {
-      "pragma": "React",
-      "version": "detect"
+  "overrides": [
+    {
+      "files": ["*.{spec,test}.{ts,tsx,js,jsx}"],
+      "rules": {
+        "no-console": "warn",
+        "@typescript-eslint/naming-convention": "off",
+        "prefer-destructuring": [
+          "error",
+          {
+            "array": false,
+            "object": true
+          },
+          {
+            "enforceForRenamedProperties": false
+          }
+        ]
+      }
     }
-  }
+  ]
 }
-
-// So what are the configurations being set?
-
-// env
-// Enables the use of global env variables in your code. Enabling the env variables will prevent eslint from giving errors.
-
-// rules
-// Configure/enable/disable specific rules from the plugins and configs
-
-// extends
-// Extends configuration files from npm packages.
-
-// react-app - Eslint configuration used by create-react-app
-// react-app/jest - Eslint configuration used by create-react-app
-// eslint:recommended - Eslint recommended configuration by eslint
-// plugin:react/recommended - Recommended react linting configs details
-// plugin:@typescript-eslint/recommended - Turns on rules from TypeScript-specific plugin. npm install --save-dev @typescript-eslint/eslint-plugin details
-
-// plugin:react-hooks/recommended - Eslint configuration for react-hooks by create-react-app details. Comes installed together with npx create-react-app
-
-// prettier - Turns off all rules that are unnecessary or might conflict with Prettier. You will need to install this package for you to use it. npm install --save-dev eslint-config-prettier
-// details
-
-// plugins
-// Plugins from npm packages which configures and rules
-
-// react - For eslint-plugin-react
-// @typescript-eslint - For parser and extension @typescript-eslint/recommended
-// parser
-// Use @typescript-eslint/parser for typescript to work with eslint. This allows Eslint to understand TypeScript syntax. Install typescript-eslint npm install --save-dev @typescript-eslint/parser details
-// parserOptions
-// ecmaVersions - sets the ECMAScript version you want to support for your project
-// ecmaFeatures - set jsx to true for React
-// project - Tells Eslint where to find the root tsconfig file of your project. If you have multiple tsconfigs in the project, you can define where the tsconfigs are found. details
-// settings
-// The settings made here will be shared across all rules for plugins. For eslint-plugin-react, it will require some defaults setttings:
-
-// pragma: "React" - defaults to React
-// version: "detect" - auto detects the version of React eslint eslint-plugin-react
-// Remember to install vscode extension Eslint and Prettier in order for linting and styling to work. With this configuration, you are all set to write in typescript for any React projects.
-
-
-
-

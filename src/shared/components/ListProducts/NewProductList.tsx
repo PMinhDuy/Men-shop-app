@@ -5,6 +5,8 @@ import ProductItem from "../common/ProductItem";
 export default function NewProductListComponent() {
   const { data } = useGetProductsQuery();
 
+  console.log(data);
+
   return (
     <Row gutter={[24, 24]}>
       <Col span={10}>
