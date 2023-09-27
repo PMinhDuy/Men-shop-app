@@ -1,4 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npx lint-staged
+pnpm run check-types
+pnpm run lint-staged
+pnpm run lint-pass
