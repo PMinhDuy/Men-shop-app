@@ -44,17 +44,17 @@ jobs:
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     
-    - name: Build
-      run: pnpm run build --if-present
+    # - name: Build
+    #   run: pnpm run build --if-present
 
-    - name: Deploy
-      run: |
-        git config --global user.name $user_name
-        git config --global user.email $user_email
-        git remote set-url origin https://${github_token}@github.com/${repository}
-        pnpm run deploy
-      env:
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-        repository: ${{ github.repository }}
+    # - name: Deploy
+    #   run: |
+    #     git config --global user.name $user_name
+    #     git config --global user.email $user_email
+    #     git remote set-url origin https://${github_token}@github.com/${repository}
+    #     pnpm run deploy
+    #   env:
+    #     user_name: 'github-actions[bot]'
+    #     user_email: 'github-actions[bot]@users.noreply.github.com'
+    #     github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+    #     repository: ${{ github.repository }}
