@@ -23,12 +23,17 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '20.x'
+        cache: "npm"
+
+
+    - name: Install pnpm
+      run: npm install -g pnpm
 
     - name: Install dependencies
-      run:  yarn add
+      run: pnpm install
 
     - name: Run the tests and generate coverage report
-      run: yarn test -- --coverage
+      run: pnpm run test -- --coverage
 
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
@@ -36,14 +41,14 @@ jobs:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     
     - name: Build
-      run: yarn build --if-present
+      run: pnpm run build --if-present
 
     - name: Deploy
       run: |
         git config --global user.name $user_name
         git config --global user.email $user_email
         git remote set-url origin https://${github_token}@github.com/${repository}
-        yarn deploy
+        pnpm run deploy
       env:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
