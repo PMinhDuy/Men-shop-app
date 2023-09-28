@@ -42,8 +42,7 @@
     "lint-staged": "lint-staged",
     "lint": "eslint \"src/**/*.{tsx,ts}\" --fix",
     "lint-pass": "echo '\\033[4;32m♡ ' Format complete ♡' \\033[0m'",
-    "generated": "graphql-codegen --config codegen.yml",
-    "prepare": "husky install"
+    "generated": "graphql-codegen --config codegen.yml"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
