@@ -44,6 +44,8 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
     "@enouvo/eslint-config-react": "^2.2.0",
     "@graphql-cli/init": "^4.1.0",
     "@graphql-codegen/cli": "3.3.1",
@@ -81,6 +83,6 @@
     "src/vite-env.d.ts"
   ],
   "lint-staged": {
-    "*.{ts,tsx,js}": "eslint --fix" 
+    "*.{ts,tsx,js}": "eslint --fix"
   }
 }
