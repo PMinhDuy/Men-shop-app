@@ -18,6 +18,7 @@
     "@typescript-eslint/parser": "^6.7.3",
     "@vitejs/plugin-react-swc": "^3.4.0",
     "axios": "^1.4.0",
+    "gh-pages": "^6.0.0",
     "i18next": "^23.5.1",
     "i18next-browser-languagedetector": "^7.1.0",
     "path": "^0.12.7",
@@ -34,6 +35,7 @@
   "scripts": {
     "dev": "vite",
     "build": "pnpm run check-types && vite build",
+    "deploy": "gh-pages -d build",
     "start": "vite preview --port 3000",
     "check-types": "tsc --noEmit --pretty",
     "check-types:watch": "tsc --noEmit --watch",
@@ -84,5 +86,6 @@
   ],
   "lint-staged": {
     "*.{ts,tsx,js}": "eslint --fix"
-  }
+  },
+  "homepage": "https://myusername.github.io/my-app"
 }
