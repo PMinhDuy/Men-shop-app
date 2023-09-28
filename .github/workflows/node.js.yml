@@ -25,10 +25,10 @@ jobs:
         node-version: '20.x'
 
     - name: Install dependencies
-      run: pnpm install
+      run:  yarn add
 
     - name: Run the tests and generate coverage report
-      run: pnpm run test -- --coverage
+      run: yarn test -- --coverage
 
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
@@ -36,14 +36,14 @@ jobs:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     
     - name: Build
-      run: pnpm run build --if-present
+      run: yarn build --if-present
 
     - name: Deploy
       run: |
         git config --global user.name $user_name
         git config --global user.email $user_email
         git remote set-url origin https://${github_token}@github.com/${repository}
-        pnpm run deploy
+        yarn deploy
       env:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
