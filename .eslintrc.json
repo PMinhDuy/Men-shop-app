@@ -33,7 +33,6 @@
     "react/jsx-uses-react": 0,
     "react/react-in-jsx-scope": 0,
     "react/destructuring-assignment": "error",
-    "no-inline-styles/no-inline-styles": 2,
     "@typescript-eslint/no-unnecessary-condition": "error",
     "@typescript-eslint/method-signature-style": "error",
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
