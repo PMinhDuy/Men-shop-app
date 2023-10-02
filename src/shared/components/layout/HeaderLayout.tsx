@@ -2,13 +2,18 @@ import { Button, Col, Divider, Image, Input, Row, Select, Space } from 'antd';
 import Logo from '../../../assets/images/logo.png';
 import { useNavigate } from 'react-router-dom';
 import { UserOutlined, ShoppingOutlined, SearchOutlined } from '@ant-design/icons';
-import { PATH_URL } from '../../ultils/constant';
+import { CHAT_HASH, PATH_URL } from '../../ultils/constant';
+import ChatModal from '../chats/ChatModal';
 
 export default function HeaderLayout() {
   const navigate = useNavigate();
   const onHandleSignIn = () => {
     navigate(PATH_URL.signIn);
   };
+  const handleOpenBoxChat = () => {
+    navigate({ hash: CHAT_HASH });
+  };
+
   return (
     <div className="bg-primary-green-color w-full h-[90px]">
       <Row justify="center" className="flex justify-center h-full w-full items-center">
@@ -47,8 +52,12 @@ export default function HeaderLayout() {
           </div>
           <Divider type="vertical" className="bg-white h-4" />
           <ShoppingOutlined width={100} height={100} />
+          <div className="cursor-pointer" onClick={handleOpenBoxChat}>
+            Chat
+          </div>
         </Col>
       </Row>
+      <ChatModal />
     </div>
   );
 }
