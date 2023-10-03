@@ -3,7 +3,9 @@ import { type Product, useGetProductsQuery } from '../../../generated/schemas';
 import ProductItem from '../common/ProductItem';
 
 function SaleProductListComponent() {
-  const { data } = useGetProductsQuery();
+  const { data } = useGetProductsQuery({
+    fetchPolicy: 'network-only',
+  });
 
   return (
     <div className="flex flex-col gap-6">
@@ -15,7 +17,7 @@ function SaleProductListComponent() {
       </div>
       <Row justify={'space-between'}>
         {data?.products
-          ?.filter((item) => Number(item?.id) <= 5)
+          .filter((item) => Number(item.id) <= 5)
           .map((product: Product | null) => {
             return (
               <Col key={product?.id}>

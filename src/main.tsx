@@ -5,7 +5,7 @@ import App from './App';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { BrowserRouter } from 'react-router-dom';
 import { StyleProvider } from '@ant-design/cssinjs';
-import { Provider } from 'react-redux';
+import { Provider as ReduxProvider } from 'react-redux';
 import { store } from './store/store';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 
@@ -14,7 +14,7 @@ const Main = () => {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <Provider store={store}>
+      <ReduxProvider store={store}>
         <ApolloProvider client={client}>
           <StyleProvider hashPriority="high">
             <BrowserRouter>
@@ -22,7 +22,7 @@ const Main = () => {
             </BrowserRouter>
           </StyleProvider>
         </ApolloProvider>
-      </Provider>
+      </ReduxProvider>
     </I18nextProvider>
   );
 };

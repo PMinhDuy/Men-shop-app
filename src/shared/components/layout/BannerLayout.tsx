@@ -6,22 +6,18 @@ import Banner3 from '../../../assets/images/banner3.jpg';
 
 const DataBanners = [
   {
-    icon: <ShoppingCartOutlined />,
     title: 'Miễn phí giao hàng',
     content: 'Miễn phí phip với đơn hàng > 498K',
   },
   {
-    icon: <ShoppingCartOutlined />,
     title: 'Thanh toán COD',
     content: 'Thanh toán khi nhận hàng (COD)',
   },
   {
-    icon: <ShoppingCartOutlined />,
     title: 'Khách hàng Vip',
     content: 'Ưu đãi dành cho khách VIP',
   },
   {
-    icon: <ShoppingCartOutlined />,
     title: 'Hỗ trợ bảo hành',
     content: 'Đổi, sửa đồ tại tất cả store',
   },
@@ -41,7 +37,7 @@ function BannerLayout() {
         <Row gutter={[24, 24]} justify={'center'}>
           {DataBanners.map((item, index) => (
             <Col key={index} className="text-white flex flex-col justify-center items-center">
-              <ShoppingCartOutlined width={2} />
+              <ShoppingCartOutlined style={{ fontSize: '22px' }} />
               <Typography.Text className="text-white font-bold text-base uppercase">{item.title}</Typography.Text>
               <Typography.Text className="text-white font-semibold">{item.content}</Typography.Text>
             </Col>
