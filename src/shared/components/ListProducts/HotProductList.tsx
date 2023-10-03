@@ -1,6 +1,6 @@
 import { Col, Row } from 'antd';
 import ProductItem from '../common/ProductItem';
-import { type Product, useGetProductsQuery } from '../../../generated/schemas';
+import { useGetProductsQuery } from '../../../generated/schemas';
 
 export default function HotProductListComponent() {
   const { data } = useGetProductsQuery();
@@ -8,10 +8,10 @@ export default function HotProductListComponent() {
   return (
     <Row gutter={[24, 24]} justify={'space-between'}>
       {data?.products
-        ?.filter((item) => Number(item?.id) <= 10)
-        .map((product: Product | null) => {
+        .filter((item) => Number(item.id) <= 10)
+        .map((product) => {
           return (
-            <Col key={product?.id}>
+            <Col key={product.id}>
               <ProductItem sizeImage={200} productItem={product} />
             </Col>
           );

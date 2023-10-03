@@ -19,7 +19,7 @@ export default function NewProductListComponent() {
       <Col span={14} className="pl-16">
         <Row gutter={[24, 24]}>
           {data?.products
-            ?.filter((item) => Number(item?.id) <= 6)
+            .filter((item) => Number(item.id) <= 6)
             .map((product: Product | null) => {
               return (
                 <Col key={product?.id}>

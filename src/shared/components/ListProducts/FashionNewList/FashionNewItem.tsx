@@ -1,12 +1,19 @@
 import { Image, Typography, Divider } from 'antd';
-import { type FashionNew } from '../../../../generated/schemas';
 import { UserOutlined, FieldTimeOutlined } from '@ant-design/icons';
 
-function FashionNewItemComponent({ avatar, title, authorName, createdAt, content }: FashionNew) {
+interface FashionNewItemComponentProps {
+  avatar: string;
+  title: string;
+  authorName: string;
+  createdAt: string;
+  content: string;
+}
+
+function FashionNewItemComponent({ avatar, title, authorName, createdAt, content }: FashionNewItemComponentProps) {
   return (
     <div className="w-full">
       <div>
-        <Image width={350} className="rounded-xl" src={avatar ?? ''} preview={false} />
+        <Image width={350} className="rounded-xl" src={avatar} preview={false} />
       </div>
       <Typography.Text className="text-lg font-bold hover:text-primary-yellow-color cursor-pointer">
         {title}

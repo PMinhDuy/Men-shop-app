@@ -7,14 +7,14 @@ function FashionNewListComponent() {
 
   return (
     <Row justify={'space-between'}>
-      {data?.fashionNews?.map((item, index) => (
+      {data?.fashionNews.map((item, index) => (
         <Col key={index}>
           <FashionNewItemComponent
-            authorName={item?.authorName}
-            avatar={item?.avatar}
-            content={item?.content}
-            createdAt={item?.createdAt}
-            title={item?.title}
+            authorName={item.authorName}
+            avatar={item.avatar}
+            content={item.content}
+            createdAt={item.createdAt}
+            title={item.title}
           />
         </Col>
       ))}
