@@ -1,7 +1,7 @@
 import { Col, Row, Image } from 'antd';
 import { useGetProductsQuery } from '../../../generated/schemas';
 import type { Product } from '../../../generated/schemas';
-import ProductItem from '../common/ProductItem';
+import ProductItem from './ProductItem';
 
 function GoodPriceProductListComponent() {
   const { data } = useGetProductsQuery();

@@ -1,5 +1,5 @@
 import { Col, Row } from 'antd';
-import ProductItem from '../common/ProductItem';
+import ProductItem from './ProductItem';
 import { useGetProductsQuery } from '../../../generated/schemas';
 
 export default function HotProductListComponent() {
