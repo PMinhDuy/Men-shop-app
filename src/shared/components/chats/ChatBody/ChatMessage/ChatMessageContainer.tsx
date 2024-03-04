@@ -1,3 +1,4 @@
+import Each from '#/shared/components/common/Each';
 import ChatMessage from '.';
 
 const MESSAGE = [
@@ -23,9 +24,10 @@ const MESSAGE = [
 function ChatMessageContainer() {
   return (
     <div className="flex flex-col w-full gap-2">
-      {MESSAGE.map((message, id) => (
-        <ChatMessage key={id} message={message.content} isReceive={message.isReceive} />
-      ))}
+      <Each
+        arrayOf={MESSAGE}
+        render={(item, index) => <ChatMessage key={index} message={item.content} isReceive={item.isReceive} />}
+      />
     </div>
   );
 }

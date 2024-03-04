@@ -1,6 +1,6 @@
 import { Button, Col, Row, Typography } from 'antd';
 import { DoubleLeftOutlined, DoubleRightOutlined } from '@ant-design/icons';
-import { ReactNode, useState } from 'react';
+import { type ReactNode, Suspense, useState } from 'react';
 
 interface ContentLayoutInterface {
   title?: string;
@@ -55,7 +55,9 @@ function ContentLayout({
           <div className="flex items-center space-x-10">
             <DoubleLeftOutlined
               className="hover:text-primary-green-color cursor-pointer"
-              onClick={() => setSelectedId((id) => (id === 0 ? 4 : id - 1))}
+              onClick={() => {
+                setSelectedId((id) => (id === 0 ? 4 : id - 1));
+              }}
             />
             <Row gutter={[12, 0]}>
               {CONTENT_SIDEBAR.map((item) => (
@@ -64,7 +66,9 @@ function ContentLayout({
                     className={`px-[20px] text-base py-2 hover:cursor-pointer ${
                       item.id === selectedId ? 'bg-primary-yellow-color text-white transition-all duration-400' : ''
                     } rounded-xl`}
-                    onClick={() => setSelectedId(item.id)}
+                    onClick={() => {
+                      setSelectedId(item.id);
+                    }}
                   >
                     {item.title}
                   </div>
@@ -73,12 +77,14 @@ function ContentLayout({
             </Row>
             <DoubleRightOutlined
               className="hover:text-primary-green-color cursor-pointer"
-              onClick={() => setSelectedId((id) => (id === 4 ? 0 : id + 1))}
+              onClick={() => {
+                setSelectedId((id) => (id === 4 ? 0 : id + 1));
+              }}
             />
           </div>
         )}
       </div>
-      {childrenComponent}
+      <Suspense fallback={<div>Loading....</div>}>{childrenComponent}</Suspense>
       {showButton && (
         <div className="flex justify-center pt-[50px]">
           <Button

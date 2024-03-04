@@ -3,6 +3,7 @@ import { ShoppingCartOutlined } from '@ant-design/icons';
 import Banner1 from '../../../assets/images/banner1.jpg';
 import Banner2 from '../../../assets/images/banner2.jpg';
 import Banner3 from '../../../assets/images/banner3.jpg';
+import Each from '../common/Each';
 
 const DataBanners = [
   {
@@ -35,13 +36,16 @@ function BannerLayout() {
       </div>
       <div className="bg-primary-yellow-color py-6 flex justify-center items-center w-full">
         <Row gutter={[24, 24]} justify={'center'}>
-          {DataBanners.map((item, index) => (
-            <Col key={index} className="text-white flex flex-col justify-center items-center">
-              <ShoppingCartOutlined style={{ fontSize: '22px' }} />
-              <Typography.Text className="text-white font-bold text-base uppercase">{item.title}</Typography.Text>
-              <Typography.Text className="text-white font-semibold">{item.content}</Typography.Text>
-            </Col>
-          ))}
+          <Each
+            arrayOf={DataBanners}
+            render={(item, index) => (
+              <Col key={index} className="text-white flex flex-col justify-center items-center">
+                <ShoppingCartOutlined style={{ fontSize: '22px' }} />
+                <Typography.Text className="text-white font-bold text-base uppercase">{item.title}</Typography.Text>
+                <Typography.Text className="text-white font-semibold">{item.content}</Typography.Text>
+              </Col>
+            )}
+          />
         </Row>
       </div>
     </>

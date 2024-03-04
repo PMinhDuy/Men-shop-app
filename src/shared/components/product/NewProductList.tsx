@@ -1,6 +1,7 @@
 import { Col, Row, Image } from 'antd';
-import { type Product, useGetProductsQuery } from '../../../generated/schemas';
+import { useGetProductsQuery } from '../../../generated/schemas';
 import ProductItem from './ProductItem';
+import Each from '../common/Each';
 
 export default function NewProductListComponent() {
   const { data } = useGetProductsQuery();
@@ -18,15 +19,14 @@ export default function NewProductListComponent() {
       </Col>
       <Col span={14} className="pl-16">
         <Row gutter={[24, 24]}>
-          {data?.products
-            .filter((item) => Number(item.id) <= 6)
-            .map((product: Product | null) => {
-              return (
-                <Col key={product?.id}>
-                  <ProductItem sizeImage={180} productItem={product} />
-                </Col>
-              );
-            })}
+          <Each
+            arrayOf={data?.products.filter((item) => Number(item.id) <= 6) ?? []}
+            render={(item) => (
+              <Col key={item.id}>
+                <ProductItem sizeImage={180} productItem={item} />
+              </Col>
+            )}
+          />
         </Row>
       </Col>
     </Row>

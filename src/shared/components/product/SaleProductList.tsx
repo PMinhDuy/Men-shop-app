@@ -1,6 +1,7 @@
 import { Col, Row, Image } from 'antd';
-import { type Product, useGetProductsQuery } from '../../../generated/schemas';
+import { useGetProductsQuery } from '../../../generated/schemas';
 import ProductItem from './ProductItem';
+import Each from '../common/Each';
 
 function SaleProductListComponent() {
   const { data } = useGetProductsQuery({
@@ -16,21 +17,20 @@ function SaleProductListComponent() {
         />
       </div>
       <Row justify={'space-between'}>
-        {data?.products
-          .filter((item) => Number(item.id) <= 5)
-          .map((product: Product | null) => {
-            return (
-              <Col key={product?.id}>
-                <ProductItem
-                  className={{
-                    titleColor: 'text-white',
-                  }}
-                  sizeImage={200}
-                  productItem={product}
-                />
-              </Col>
-            );
-          })}
+        <Each
+          arrayOf={data?.products.filter((item) => Number(item.id) <= 5) ?? []}
+          render={(item) => (
+            <Col key={item.id}>
+              <ProductItem
+                className={{
+                  titleColor: 'text-white',
+                }}
+                sizeImage={200}
+                productItem={item}
+              />
+            </Col>
+          )}
+        />
       </Row>
     </div>
   );
